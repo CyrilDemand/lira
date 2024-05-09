@@ -289,7 +289,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 118311066}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 303211474}
+        m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
+        m_MethodName: MakeChoice
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &118311066
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -440,6 +452,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialoguePanel: {fileID: 1769437306}
   dialogueText: {fileID: 445063401}
+  choices:
+  - {fileID: 840821609}
+  - {fileID: 1937836795}
+  - {fileID: 118311063}
 --- !u!1 &367346213
 GameObject:
   m_ObjectHideFlags: 3
@@ -1212,7 +1228,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 840821612}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 303211474}
+        m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
+        m_MethodName: MakeChoice
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &840821612
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1306,7 +1334,6 @@ GameObject:
   - component: {fileID: 891676757}
   - component: {fileID: 891676756}
   - component: {fileID: 891676755}
-  - component: {fileID: 891676754}
   m_Layer: 0
   m_Name: PlantsInPots_5
   m_TagString: Untagged
@@ -1314,20 +1341,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &891676754
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 891676753}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: edbbb4343e9efc8499e98e0cd5f4533d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  visualCue: {fileID: 0}
-  inkJSON: {fileID: 0}
 --- !u!61 &891676755
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2695,7 +2708,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1937836798}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 303211474}
+        m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
+        m_MethodName: MakeChoice
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1937836798
 MonoBehaviour:
   m_ObjectHideFlags: 0
