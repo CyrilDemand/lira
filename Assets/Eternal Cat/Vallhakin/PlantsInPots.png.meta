@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 16384
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -121,7 +121,196 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: PlantsInPots_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1195.9
+        height: 2322
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22540310b45996d4caa557c2439603f1
+      internalID: -1743817623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantsInPots_1
+      rect:
+        serializedVersion: 2
+        x: 1195
+        y: 0
+        width: 1195.9
+        height: 2322
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c669f5bba8eb7142bd7732eb34d68c7
+      internalID: 1620973014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantsInPots_2
+      rect:
+        serializedVersion: 2
+        x: 2390
+        y: 0
+        width: 1195.9
+        height: 2322
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c43bb5dcb03ce0e4ebb54551378debdf
+      internalID: 1453162786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantsInPots_3
+      rect:
+        serializedVersion: 2
+        x: 3585
+        y: 0
+        width: 1195.9
+        height: 2322
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b01f93afde0f1f4f989e97baafca711
+      internalID: -562631349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantsInPots_4
+      rect:
+        serializedVersion: 2
+        x: 4780
+        y: 0
+        width: 1195.9
+        height: 2322
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e2352f606380f2429e731a8f7206430
+      internalID: 1414077952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantsInPots_5
+      rect:
+        serializedVersion: 2
+        x: 5975
+        y: 0
+        width: 1195.9
+        height: 2322
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41b5b0e635391f248a075fd6a8cb28c1
+      internalID: -703977875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantsInPots_6
+      rect:
+        serializedVersion: 2
+        x: 7170
+        y: 0
+        width: 1195.9
+        height: 2322
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef89706fcdbfbf0428c795174e0595c4
+      internalID: -1007998892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantsInPots_7
+      rect:
+        serializedVersion: 2
+        x: 8365
+        y: 0
+        width: 1195.9
+        height: 2322
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c634253a3da0314380d2803bfa44d73
+      internalID: 524456970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantsInPots_8
+      rect:
+        serializedVersion: 2
+        x: 10755
+        y: 0
+        width: 1195.9
+        height: 2322
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a6e10dbe020c154b940b56fc15dc133
+      internalID: -377580726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -132,7 +321,16 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      PlantsInPots_0: -1743817623
+      PlantsInPots_1: 1620973014
+      PlantsInPots_2: 1453162786
+      PlantsInPots_3: -562631349
+      PlantsInPots_4: 1414077952
+      PlantsInPots_5: -703977875
+      PlantsInPots_6: -1007998892
+      PlantsInPots_7: 524456970
+      PlantsInPots_8: -377580726
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
