@@ -3,11 +3,14 @@ using UnityEngine;
 public class Teleporter : MonoBehaviour
 {
     // Position cible pour la téléportation
-    [SerializeField] private Vector2 destination;
+    [SerializeField] public Vector2 destination;
 
     // Angle en degrés qui définit un cône de téléportation
     [SerializeField] private float detectionAngle = 45f;
 
+    [SerializeField] public GameObject roomDestination;
+    
+    [SerializeField] public GameObject roomWhereIsTheTP;
     // Détecter les entrées dans le collider attaché à ce GameObject
     private void OnTriggerEnter2D(Collider2D other)
     {
