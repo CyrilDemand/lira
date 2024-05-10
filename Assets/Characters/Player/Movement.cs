@@ -10,6 +10,9 @@ public class Movement : MonoBehaviour
     private Coroutine movementCoroutine;
     private bool isMoving = false;
 
+    [SerializeField]
+    private Animator animator;
+    
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -22,7 +25,7 @@ public class Movement : MonoBehaviour
         {
             // Récupérer l'entrée du joueur
             movementInput = InputManager.instance.GetMovementInput();
-
+            handleAnimation(movementInput);
             // Si un mouvement est détecté
             if (movementInput != Vector2.zero && !isMoving)
             {
@@ -62,6 +65,28 @@ public class Movement : MonoBehaviour
 
             if (movementCoroutine != null)
                 StopCoroutine(movementCoroutine);
+        }
+    }
+
+    private void handleAnimation(Vector2 movementInput)
+    {
+        if (movementInput.x>0)
+        {
+            animator.SetFloat("x", 1);
+        }else if (movementInput.x<0)
+        {
+            animator.SetFloat("x", -1);
+        }else if (movementInput.y>0)
+        {
+            animator.SetFloat("y", 1);
+        }else if (movementInput.y<0)
+        {
+            animator.SetFloat("y", -1);
+        }
+        else
+        {
+            animator.SetFloat("x", 0);
+            animator.SetFloat("y", 0);
         }
     }
 
