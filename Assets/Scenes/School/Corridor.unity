@@ -1027,7 +1027,7 @@ GameObject:
   m_Component:
   - component: {fileID: 303211473}
   - component: {fileID: 303211474}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: DialogueManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2231,7 +2231,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_TargetDisplay: 0
 --- !u!224 &469504443
 RectTransform:
@@ -4704,6 +4704,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 2379612537759709747, guid: 6d14e36cff805e4408f4a15bad7bfa6c, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3017371889084356734, guid: 6d14e36cff805e4408f4a15bad7bfa6c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -4812,9 +4816,9 @@ GameObject:
   - component: {fileID: 1299564473}
   - component: {fileID: 1299564474}
   - component: {fileID: 1299564475}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Trigger
-  m_TagString: Untagged
+  m_TagString: InteractPNJTrigger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5019,7 +5023,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1385464204}
   - component: {fileID: 1385464205}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: VisualCue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8567,9 +8571,9 @@ GameObject:
   - component: {fileID: 2085916637}
   - component: {fileID: 2085916640}
   - component: {fileID: 2085916639}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Aphrodi_body
-  m_TagString: Untagged
+  m_TagString: PNJ
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8701,7 +8705,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destination: {x: -18, y: 47}
-  moveSpeed: 5
+  moveSpeed: 2
 --- !u!114 &2085916640
 MonoBehaviour:
   m_ObjectHideFlags: 0

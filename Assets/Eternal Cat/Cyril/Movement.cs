@@ -115,7 +115,7 @@ public class Movement : MonoBehaviour
         rb.velocity = Vector2.zero;
     }
 
-    private void HandleAnimation(Vector2 movementInput)
+    public void HandleAnimation(Vector2 movementInput)
     {
         if (movementInput.x > 0)
         {

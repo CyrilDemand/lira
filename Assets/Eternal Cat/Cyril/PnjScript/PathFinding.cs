@@ -10,7 +10,7 @@ public class PathFinding : MonoBehaviour
     private List<Teleporter> tps;
     
     [SerializeField]
-    private float moveSpeed = 5f;
+    public float moveSpeed = 2f;
 
     private GameObject roomWhereIsTheCharacter;
     private GameObject roomWhereIsTheDestination;
@@ -241,7 +241,7 @@ public class PathFinding : MonoBehaviour
     void MoveTowardsDestination(Vector2 targetPosition)
     {
         // Calcule la nouvelle position en se déplaçant graduellement vers la destination
-        transform.position = Vector2.MoveTowards(transform.position, targetPosition, Time.deltaTime * 2.0f); // Vitesse fixe de 2.0f
+        transform.position = Vector2.MoveTowards(transform.position, targetPosition, Time.deltaTime * moveSpeed); // Vitesse fixe de 2.0f
     }
 
     // Méthode pour déplacer le GameObject vers la destination
