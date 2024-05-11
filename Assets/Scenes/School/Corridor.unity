@@ -153,6 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+  allPNJ: []
 --- !u!4 &13228867
 Transform:
   m_ObjectHideFlags: 0
@@ -2872,7 +2873,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeText: {fileID: 1110735143}
-  timeScale: 60
+  timeScale: 10
 --- !u!1 &654422920
 GameObject:
   m_ObjectHideFlags: 0
@@ -5079,6 +5080,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   visualCue: {fileID: 1385464203}
   inkJSON: {fileID: 4900000, guid: ac83077cafa7f404b986e4153448ffe3, type: 3}
+  dialogueKey: 
 --- !u!1 &1302657242
 GameObject:
   m_ObjectHideFlags: 0
@@ -8975,6 +8977,7 @@ GameObject:
   - component: {fileID: 2085916637}
   - component: {fileID: 2085916640}
   - component: {fileID: 2085916639}
+  - component: {fileID: 2085916641}
   m_Layer: 3
   m_Name: Aphrodi_body
   m_TagString: PNJ
@@ -9124,6 +9127,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: 
   movementThreshold: 0.01
+--- !u!114 &2085916641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2085916635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 864bc8c79e98fd347be1cb1e98da3767, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scheduleJSON: {fileID: 4900000, guid: 6ec8ba1145df11b498b4ff543b1b7d27, type: 3}
 --- !u!1 &2118270088
 GameObject:
   m_ObjectHideFlags: 0
