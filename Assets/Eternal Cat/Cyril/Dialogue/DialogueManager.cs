@@ -63,7 +63,7 @@ public class DialogueManager : MonoBehaviour
             return;
         }
 
-        if (InputManager.instance.isSubmitPressed())
+        if (InputManager.instance.IsSubmitPressed())
         {
             ContinueStory();
         }
