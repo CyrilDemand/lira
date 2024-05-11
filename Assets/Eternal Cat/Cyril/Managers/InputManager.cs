@@ -1,5 +1,6 @@
 using UnityEngine;
-
+using System.Collections;
+    
 public class InputManager : MonoBehaviour
 {
     public static InputManager instance;
@@ -28,6 +29,10 @@ public class InputManager : MonoBehaviour
         verticalInput = Input.GetAxisRaw("Vertical");
         interactPressed = Input.GetKeyDown(KeyCode.E);
         submitPressed = Input.GetKeyDown(KeyCode.Space);
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            Sleep();
+        }
     }
 
     public Vector2 GetMovementInput()
@@ -43,5 +48,22 @@ public class InputManager : MonoBehaviour
     public bool IsSubmitPressed()
     {
         return submitPressed;
+    }
+
+    public void Sleep()
+    {
+        // Récupère le FadeController et lance le fondu au noir
+        FadeController fadeController = FindObjectOfType<FadeController>(); // Assure-toi que ce script est attaché à un objet approprié dans la scène
+        fadeController.FadeToBlack();
+
+        // Attendre que le fondu au noir soit complet
+        StartCoroutine(WaitAndWakeUp(fadeController));
+    }
+
+    private IEnumerator WaitAndWakeUp(FadeController fadeController)
+    {
+        yield return new WaitForSeconds(fadeController.fadeDuration); // Attendre la durée du fondu
+        TimeManager.Instance.SetTimeAtMorning(); // Réinitialise le temps au matin
+        fadeController.FadeFromBlack(); // Lance le fondu retour à la normale
     }
 }
