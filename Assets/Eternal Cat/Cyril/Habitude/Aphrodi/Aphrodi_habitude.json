@@ -1,0 +1,12 @@
+{
+    "dailySchedule": 
+    [
+      {
+        "time": "09:45",
+        "location": "PlantsInPots_2",
+        "activity": "walk",
+        "dialogueKey": "morningGreeting"
+      }
+    ]
+}
+  
