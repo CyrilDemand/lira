@@ -19,6 +19,7 @@ public class PnjMovementDetection : MonoBehaviour
     [SerializeField]
     private Boolean isLastFrameStopped;
     private bool isAnimationPlaying = true;
+    
     // Appelé avant le premier frame
     void Start()
     {
@@ -49,7 +50,7 @@ public class PnjMovementDetection : MonoBehaviour
         }
         
         // Mise à jour de la position précédente
-        previousPosition = transform.position;
+        previousPosition = currentPosition;
     }
     
     public void HandleAnimation()
@@ -57,33 +58,43 @@ public class PnjMovementDetection : MonoBehaviour
         string tmp = direction;
         bool isMoving = true;
 
-        if (currentPosition.x > previousPosition.x)
+        float deltaX = currentPosition.x - previousPosition.x;
+        float deltaY = currentPosition.y - previousPosition.y;
+
+        if (deltaY == 0 && deltaX ==0)
         {
-            direction = "droite";
-            animator.SetFloat("x", 1);
-            animator.SetFloat("y", 0);
-        }
-        else if (currentPosition.x < previousPosition.x)
-        {
-            direction = "gauche";
-            animator.SetFloat("x", -1);
-            animator.SetFloat("y", 0);
-        }
-        else if (currentPosition.y > previousPosition.y)
-        {
-            animator.SetFloat("y", 1);
+            direction = "acuun";
             animator.SetFloat("x", 0);
-        }
-        else if (currentPosition.y < previousPosition.y)
+            animator.SetFloat("y", 0);
+        }else if (Mathf.Abs(deltaX) > Mathf.Abs(deltaY))
         {
-            animator.SetFloat("y", -1);
-            animator.SetFloat("x", 0);
+            if (deltaX > 0)
+            {
+                direction = "droite";
+                animator.SetFloat("x", 1);
+                animator.SetFloat("y", 0);
+            }
+            else
+            {
+                direction = "gauche";
+                animator.SetFloat("x", -1);
+                animator.SetFloat("y", 0);
+            }
         }
         else
         {
-            animator.SetFloat("x", 0);
-            animator.SetFloat("y", 0);
-            isMoving = false;
+            if (deltaY > 0)
+            {
+                direction = "haut";
+                animator.SetFloat("y", 1);
+                animator.SetFloat("x", 0);
+            }
+            else
+            {
+                direction = "bas";
+                animator.SetFloat("y", -1);
+                animator.SetFloat("x", 0);
+            }
         }
 
         if (direction != tmp)
@@ -100,6 +111,10 @@ public class PnjMovementDetection : MonoBehaviour
                 isAnimationPlaying = false;
             }
         }
-        
+    }
+
+    public string GetCurrentDirection()
+    {
+        return direction;
     }
 }

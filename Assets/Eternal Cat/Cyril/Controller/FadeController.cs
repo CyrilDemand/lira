@@ -1,39 +1,45 @@
-using System;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 
 public class FadeController : MonoBehaviour
 {
-    public Image fadeImage;
-    public float fadeDuration = 2.0f;
+    public Image fadeImage; // Une image noire pleine écran
+    public float fadeDuration = 0.5f; // Durée du fondu, réduite pour être plus rapide
 
-    public void Start()
+    private void Start()
     {
-        fadeImage.color = new Color(fadeImage.color.r, fadeImage.color.g, fadeImage.color.b, 0);
+        if (fadeImage == null)
+        {
+            Debug.LogError("FadeController: L'image de fondu n'est pas assignée.");
+        }
     }
 
     public void FadeToBlack()
     {
-        StartCoroutine(FadeImage(true));
+        StartCoroutine(Fade(0, 1));
     }
 
     public void FadeFromBlack()
     {
-        StartCoroutine(FadeImage(false));
+        StartCoroutine(Fade(1, 0));
     }
 
-    private IEnumerator FadeImage(bool fadeToBlack)
+    private IEnumerator Fade(float startAlpha, float endAlpha)
     {
-        float targetAlpha = fadeToBlack ? 1.0f : 0.0f;
-        float alpha = fadeImage.color.a;
-        float fadeSpeed = Mathf.Abs(alpha - targetAlpha) / fadeDuration;
+        float elapsedTime = 0f;
+        Color color = fadeImage.color;
 
-        while (!Mathf.Approximately(alpha, targetAlpha))
+        while (elapsedTime < fadeDuration)
         {
-            alpha = Mathf.MoveTowards(alpha, targetAlpha, fadeSpeed * Time.deltaTime);
-            fadeImage.color = new Color(fadeImage.color.r, fadeImage.color.g, fadeImage.color.b, alpha);
+            elapsedTime += Time.deltaTime;
+            color.a = Mathf.Lerp(startAlpha, endAlpha, elapsedTime / fadeDuration);
+            fadeImage.color = color;
             yield return null;
         }
+
+        // Assurer que la couleur finale soit correctement appliquée
+        color.a = endAlpha;
+        fadeImage.color = color;
     }
 }

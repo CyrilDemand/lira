@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using System.Collections;
 public class Teleporter : MonoBehaviour
 {
     // Position cible pour la téléportation
@@ -33,6 +33,7 @@ public class Teleporter : MonoBehaviour
             {
                 // Téléporter le GameObject à la destination
                 other.transform.position = new Vector3(destination.x, destination.y, other.transform.position.z);
+                SwapZone();
             }
         }
     }
@@ -42,5 +43,33 @@ public class Teleporter : MonoBehaviour
     {
         Gizmos.color = Color.green;
         Gizmos.DrawSphere(new Vector2(destination.x, destination.y), 0.5f);
+    }
+    
+    public void SwapZone()
+    {
+        // Récupère le FadeController et lance le fondu au noir
+        FadeController fadeController = FindObjectOfType<FadeController>(); // Assure-toi que ce script est attaché à un objet approprié dans la scène
+        if (fadeController != null)
+        {
+            StartCoroutine(FadeTransition(fadeController));
+        }
+        else
+        {
+            Debug.LogError("ZoneSwapper: Aucun FadeController trouvé dans la scène.");
+        }
+    }
+    
+    private IEnumerator FadeTransition(FadeController fadeController)
+    {
+        fadeController.FadeToBlack();
+
+        // Attendre une durée plus courte avant de lancer le fondu retour
+        yield return new WaitForSeconds(fadeController.fadeDuration * 0.0f); // Par exemple, attendre la moitié de la durée de fondu
+
+        // ICI, vous pouvez ajouter le code pour effectuer les changements de zone
+        // Par exemple: changer la position du joueur, charger une nouvelle scène, etc.
+
+        // Lance le fondu retour à la normale
+        fadeController.FadeFromBlack();
     }
 }
