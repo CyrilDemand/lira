@@ -79,7 +79,10 @@ public class TimeManager : MonoBehaviour
     {
         int hours = time / 60;
         int minutes = time % 60;
-        timeText.text = $"{hours:00}:{minutes:00}";
+        if (time % 15 == 0)
+        {
+            timeText.text = $"{hours:00}:{minutes:00}";
+        }
     }
 
     public void SetTimeAtMorning()

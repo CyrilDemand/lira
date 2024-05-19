@@ -1,39 +1,83 @@
-using System;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 
 public class FadeController : MonoBehaviour
 {
-    public Image fadeImage;
-    public float fadeDuration = 2.0f;
+    public Image fadeImage; // Une image noire pleine écran
+    public float fadeDuration = 0.5f; // Durée du fondu, réduite pour être plus rapide
+    public float slideDuration = 0.5f; // Durée du slide
 
-    public void Start()
+    private void Start()
     {
-        fadeImage.color = new Color(fadeImage.color.r, fadeImage.color.g, fadeImage.color.b, 0);
+        if (fadeImage == null)
+        {
+            Debug.LogError("FadeController: L'image de fondu n'est pas assignée.");
+        }
     }
 
     public void FadeToBlack()
     {
-        StartCoroutine(FadeImage(true));
+        StartCoroutine(Fade(0, 1));
     }
 
     public void FadeFromBlack()
     {
-        StartCoroutine(FadeImage(false));
+        StartCoroutine(Fade(1, 0));
     }
 
-    private IEnumerator FadeImage(bool fadeToBlack)
+    public void InstantBlack()
     {
-        float targetAlpha = fadeToBlack ? 1.0f : 0.0f;
-        float alpha = fadeImage.color.a;
-        float fadeSpeed = Mathf.Abs(alpha - targetAlpha) / fadeDuration;
+        Color color = fadeImage.color;
+        color.a = 1;
+        fadeImage.color = color;
+    }
 
-        while (!Mathf.Approximately(alpha, targetAlpha))
+    public IEnumerator SlideBlackLeftToRight(GameObject player)
+    {
+        yield return StartCoroutine(SlideBlackLeftToRightCoroutine());
+ 
+    }
+
+
+    private IEnumerator Fade(float startAlpha, float endAlpha)
+    {
+        float elapsedTime = 0f;
+        Color color = fadeImage.color;
+
+        while (elapsedTime < fadeDuration)
         {
-            alpha = Mathf.MoveTowards(alpha, targetAlpha, fadeSpeed * Time.deltaTime);
-            fadeImage.color = new Color(fadeImage.color.r, fadeImage.color.g, fadeImage.color.b, alpha);
+            elapsedTime += Time.deltaTime;
+            color.a = Mathf.Lerp(startAlpha, endAlpha, elapsedTime / fadeDuration);
+            fadeImage.color = color;
             yield return null;
         }
+
+        // Assurer que la couleur finale soit correctement appliquée
+        color.a = endAlpha;
+        fadeImage.color = color;
     }
+
+    public IEnumerator SlideBlackLeftToRightCoroutine()
+    {
+        float elapsedTime = 0f;
+        RectTransform rectTransform = fadeImage.GetComponent<RectTransform>();
+
+        Vector2 startPos = new Vector2(-Screen.width, 0); // Hors écran à gauche
+        Vector2 endPos = new Vector2(Screen.width, 0); // Hors écran à droite
+
+        rectTransform.anchoredPosition = startPos;
+
+        while (elapsedTime < slideDuration)
+        {
+            elapsedTime += Time.deltaTime;
+            rectTransform.anchoredPosition = Vector2.Lerp(startPos, endPos, elapsedTime / slideDuration);
+            yield return null;
+        }
+
+        rectTransform.anchoredPosition = endPos; // Assurer que la position finale soit correctement appliquée
+    }
+    
+    
+
 }
