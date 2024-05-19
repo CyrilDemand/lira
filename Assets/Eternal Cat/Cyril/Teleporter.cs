@@ -67,7 +67,7 @@ public class Teleporter : MonoBehaviour
         GameObject roomUI = GameObject.Find("Room UI");
         if (roomUI != null)
         {
-            float targetDeltaY = -200f; // Déplacement de 200 unités sur l'axe Y (ou ajustez cette valeur si nécessaire)
+            float targetDeltaY = -120f; // Déplacement de 200 unités sur l'axe Y (ou ajustez cette valeur si nécessaire)
             StartCoroutine(MoveRoomUI(roomUI, targetDeltaY, 1.0f)); // Déplacer sur 1 seconde
 
             // Trouve l'enfant "RoomText" et met à jour son texte
@@ -97,17 +97,26 @@ public class Teleporter : MonoBehaviour
     
     private IEnumerator FadeTransition(FadeController fadeController)
     {
-        fadeController.FadeToBlack();
+        GameObject player = GameObject.Find("Player");
+        if (player != null)
+        {
+            fadeController.InstantBlack(); // Instantanément noir
+            yield return null; // attendre un frame pour que la transition soit visible
+            player.GetComponent<Movement>().changeIsStopped();
+            yield return StartCoroutine(fadeController.SlideBlackLeftToRight(player)); // Faire le slide noir de gauche à droite
 
-        // Attendre une durée plus courte avant de lancer le fondu retour
-        yield return new WaitForSeconds(fadeController.fadeDuration * 0.5f); // Par exemple, attendre la moitié de la durée de fondu
+            // Attendre la durée du slide
+            yield return new WaitForSeconds(fadeController.slideDuration);
 
-        // ICI, vous pouvez ajouter le code pour effectuer les changements de zone
-        // Par exemple: changer la position du joueur, charger une nouvelle scène, etc.
+            // ICI, vous pouvez ajouter le code pour effectuer les changements de zone
+            // Par exemple: changer la position du joueur, charger une nouvelle scène, etc.
 
-        // Lance le fondu retour à la normale
-        fadeController.FadeFromBlack();
+            // Lance le fondu retour à la normale
+            fadeController.FadeFromBlack();
+            player.GetComponent<Movement>().changeIsStopped();
+        }
     }
+
 
     private IEnumerator MoveRoomUI(GameObject roomUI, float deltaY, float duration)
     {
