@@ -58,7 +58,7 @@ public class FadeController : MonoBehaviour
         fadeImage.color = color;
     }
 
-    private IEnumerator SlideBlackLeftToRightCoroutine()
+    public IEnumerator SlideBlackLeftToRightCoroutine()
     {
         float elapsedTime = 0f;
         RectTransform rectTransform = fadeImage.GetComponent<RectTransform>();
@@ -77,5 +77,7 @@ public class FadeController : MonoBehaviour
 
         rectTransform.anchoredPosition = endPos; // Assurer que la position finale soit correctement appliquée
     }
+    
+    
 
 }
