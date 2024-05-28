@@ -12,30 +12,14 @@ public class DialogueTrigger : MonoBehaviour
     private TextAsset inkJSON;
 
     private bool playerInRange;
+
+    public string dialogueKey;
     private void Awake()
     {
         visualCue.SetActive(false);
         visualCue.SetActive(false);
+        dialogueKey = "";
     }
-    
-    private GameObject GetClosestParentWithTag(string tag)
-    {
-        Transform currentParent = transform.parent; // Commencez par le parent immédiat de cet objet.
-
-        // Boucle pour remonter la hiérarchie des parents
-        while (currentParent != null)
-        {
-            if (currentParent.CompareTag(tag)) // Vérifiez si le parent a le tag désiré.
-            {
-                return currentParent.gameObject; // Retournez le GameObject si le tag correspond.
-            }
-            currentParent = currentParent.parent; // Passez au parent suivant.
-        }
-
-        return null; // Retournez null si aucun parent avec le tag spécifié n'est trouvé.
-    }
-
-
     
     private void Update()
     {
@@ -45,7 +29,7 @@ public class DialogueTrigger : MonoBehaviour
             if (InputManager.instance.IsInteractPressed())
             {
                 Debug.Log(inkJSON.text);
-                DialogueManager.getInstance().EnterDialogueMode(inkJSON);
+                DialogueManager.getInstance().EnterDialogueMode(inkJSON, dialogueKey);
             }
             
         }

@@ -14,6 +14,8 @@ public class Movement : MonoBehaviour
     private Vector2 previousPosition;
     private Vector2 currentVelocity;
 
+    private bool isStopped = false;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -28,7 +30,7 @@ public class Movement : MonoBehaviour
         currentVelocity = (currentPosition - previousPosition) / Time.deltaTime;
         previousPosition = currentPosition;  // Mise à jour de la position précédente
         
-        if (!DialogueManager.getInstance().dialogueIsPlaying)
+        if (!DialogueManager.getInstance().dialogueIsPlaying && !isStopped)
         {
             HandleMovement();
             HandleAnimation(movementInput);
@@ -71,6 +73,12 @@ public class Movement : MonoBehaviour
         {
             rb.velocity = movementInput * currentSpeed;
         }
+    }
+
+    public void changeIsStopped()
+    {
+        Debug.Log("changement isStopped");
+        isStopped = !isStopped;
     }
 
     private void StopMovement()

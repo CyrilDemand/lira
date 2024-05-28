@@ -120,16 +120,18 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    public void EnterDialogueMode(TextAsset inkJson)
+    public void EnterDialogueMode(TextAsset inkJson, string dialogueKey)
     {
         StopPNJ();
         StopPlayerAnimation();
         currentStory = new Story(inkJson.text);
+        currentStory.variablesState["currentDialogue"] = dialogueKey; // Mise à jour de la variable dans Ink
         dialogueIsPlaying = true;
         dialoguePanel.SetActive(true);
-
+        
         ContinueStory();
     }
+
 
     private void ExitDialogue()
     {
@@ -142,7 +144,9 @@ public class DialogueManager : MonoBehaviour
     {
         if (currentStory.canContinue)
         {
-            dialogueText.text = currentStory.Continue();
+            string text = currentStory.Continue();
+            dialogueText.text = text;
+            Debug.Log("text : " + text);
             if (currentStory.currentChoices.Count > 0)
             {
                 DisplayChoices();
@@ -155,6 +159,7 @@ public class DialogueManager : MonoBehaviour
         }
         else
         {
+            Debug.Log("Fin du dialogue.");
             resumePNJPathFinding();
             ExitDialogue();
         }

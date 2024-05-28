@@ -11,6 +11,7 @@ public class GlobalGameManager : MonoBehaviour
     private Dictionary<String, Vector2> pnjLocations;
     private GameObject[] allRooms;
     private Teleporter[] allTP;
+    public GameObject[] allPNJ;
     private void Awake()
     {
         if (instance == null)
@@ -31,6 +32,7 @@ public class GlobalGameManager : MonoBehaviour
         pnjLocations = new Dictionary<String, Vector2>();
         allRooms = GameObject.FindGameObjectsWithTag("Room");
         InitializeTP();
+        allPNJ =  GameObject.FindGameObjectsWithTag("PNJ");
     }
 
     public void InitializeTP()

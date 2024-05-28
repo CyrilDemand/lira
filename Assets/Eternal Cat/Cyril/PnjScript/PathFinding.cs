@@ -183,7 +183,7 @@ public class PathFinding : MonoBehaviour
         }
     }
 
-    public void setDestination(Vector2 newDestination)
+    public void SetDestination(Vector2 newDestination)
     {
         this.destination = newDestination;
         roomWhereIsTheCharacter = FindRoomContainingPosition(GlobalGameManager.instance.getAllRooms(), transform.position);
