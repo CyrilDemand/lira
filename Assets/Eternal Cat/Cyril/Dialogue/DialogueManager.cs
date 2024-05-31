@@ -26,9 +26,9 @@ public class DialogueManager : MonoBehaviour
 
     private TextMeshProUGUI[] choicesText;
 
-    private PathFinding pnjDeplacement;
+    public PathFinding pnjDeplacement;
 
-    private float pnjMoveSpeedBeforeStop;
+    public float pnjMoveSpeedBeforeStop;
     private void Awake()
     {
         if (instance != null)
@@ -73,6 +73,7 @@ public class DialogueManager : MonoBehaviour
 
     private void resumePNJPathFinding()
     {
+        Debug.Log(pnjDeplacement);
         pnjDeplacement.moveSpeed = pnjMoveSpeedBeforeStop;
     }
 
@@ -85,39 +86,12 @@ public class DialogueManager : MonoBehaviour
     // Méthode pour arrêter le PNJ le plus proche qui est en interaction avec le joueur
     private void StopPNJ()
     {
-        Debug.Log("stoppnj");
-        // Trouver tous les PNJ avec le tag "PNJ"
-        GameObject[] pnjs = GameObject.FindGameObjectsWithTag("PNJ");
-        float closestDistance = float.MaxValue;
-        GameObject closestPNJ = null;
-
-        // Trouver le PNJ le plus proche du joueur
-        foreach (GameObject pnj in pnjs)
+        if ( pnjDeplacement != null)
         {
-            float distance = Vector3.Distance(transform.position, pnj.transform.position);
-            if (distance < closestDistance)
-            {
-                closestDistance = distance;
-                closestPNJ = pnj;
-            }
+            pnjMoveSpeedBeforeStop = pnjDeplacement.moveSpeed;
+            pnjDeplacement.moveSpeed = 0;
         }
-
-        if (closestPNJ != null)
-        {
-            // Vérifier si le sous-objet avec le tag "InteractPNJTrigger" est actuellement déclenché par le joueur
-            Transform interactTrigger = closestPNJ.transform.Find("Trigger");
-            if (interactTrigger != null && interactTrigger.GetComponent<Collider2D>().IsTouchingLayers(LayerMask.GetMask("Player")))
-            {
-                // Accéder au script PathFinding du PNJ et mettre sa moveSpeed à 0
-                PathFinding pathFindingScript = closestPNJ.GetComponent<PathFinding>();
-                pnjDeplacement = pathFindingScript;
-                if (pathFindingScript != null)
-                {
-                    pnjMoveSpeedBeforeStop = pathFindingScript.moveSpeed;
-                    pathFindingScript.moveSpeed = 0;
-                }
-            }
-        }
+       
     }
 
     public void EnterDialogueMode(TextAsset inkJson, string dialogueKey)

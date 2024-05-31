@@ -23,16 +23,64 @@ public class InputManager : MonoBehaviour
         }
     }
 
+    private void ReadGlossaryInputs()
+    {
+         if (Input.GetMouseButtonDown(0)) // Bouton gauche de la souris
+        {
+            Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            if (mousePosition.x < 0) // Côté gauche de l'écran
+            {
+                GlossaireManager.instance.PreviousEntry();
+            }
+        }
+        if (Input.GetMouseButtonDown(0)) // Bouton droit de la souris
+        {
+            Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            if (mousePosition.x > 0) // Côté droit de l'écran
+            {
+                GlossaireManager.instance.NextEntry();
+            }
+        }
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            Debug.Log("left arrow pressed");
+            GlossaireManager.instance.PreviousEntry();
+        }
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            Debug.Log("right arrow pressed");
+            GlossaireManager.instance.NextEntry();
+        }
+    }
+
     void Update()
     {
-        horizontalInput = Input.GetAxisRaw("Horizontal");
-        verticalInput = Input.GetAxisRaw("Vertical");
-        interactPressed = Input.GetKeyDown(KeyCode.E);
-        submitPressed = Input.GetKeyDown(KeyCode.Space);
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.G))
         {
-            Sleep();
+            GlossaireManager.instance.ToggleGlossaire();
         }
+        if (GlossaireManager.instance.glossaireIsOpen)
+        {
+            ReadGlossaryInputs();
+        }else{
+            horizontalInput = Input.GetAxisRaw("Horizontal");
+            verticalInput = Input.GetAxisRaw("Vertical");
+            interactPressed = Input.GetKeyDown(KeyCode.E);
+            submitPressed = Input.GetKeyDown(KeyCode.Space);
+            if (submitPressed)
+            {
+                Debug.Log("submit pressed");
+            }
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                Sleep();
+            }
+        }
+        
+        
+       
+        // je veux utiliser les flèches gauche et droite pour changer la page du glossaire
+       
     }
 
     public Vector2 GetMovementInput()

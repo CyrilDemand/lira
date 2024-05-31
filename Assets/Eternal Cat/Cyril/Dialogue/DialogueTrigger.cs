@@ -29,6 +29,7 @@ public class DialogueTrigger : MonoBehaviour
             if (InputManager.instance.IsInteractPressed())
             {
                 Debug.Log(inkJSON.text);
+                DialogueManager.getInstance().pnjDeplacement = GetComponentInParent<PathFinding>();
                 DialogueManager.getInstance().EnterDialogueMode(inkJSON, dialogueKey);
             }
             
