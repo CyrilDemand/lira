@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Cuisine : Item
+[CreateAssetMenu(fileName = "New Ingredient", menuName = "Inventory/Ingredient")]
+public class Ingredient : Item
 {
-    public List<Item> ingredients;
+    
 }

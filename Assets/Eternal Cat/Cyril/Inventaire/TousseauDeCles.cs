@@ -2,7 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TrousseauDeCles : Item
+[CreateAssetMenu(fileName = "New Cles", menuName = "Inventory/Cles")]
+public class Cles : Item
 {
-    public List<string> keys;
+    [SerializeField]
+    public GameObject porte;
 }

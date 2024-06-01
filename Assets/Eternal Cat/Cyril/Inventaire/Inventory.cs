@@ -5,13 +5,20 @@ using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Inventory : MonoBehaviour
+[CreateAssetMenu(fileName = "New Inventory", menuName = "Inventory/Inventory")]
+public class Inventory : ScriptableObject
 {
+    [SerializeField]
     public List<PlanteItem> plantes = new List<PlanteItem>();
+    [SerializeField]
     public List<Outil> outils = new List<Outil>();
-    public List<Cuisine> cuisines = new List<Cuisine>();
+    [SerializeField]
+    public List<Ingredient> ingredients = new List<Ingredient>();
+    [SerializeField]
     public List<Potion> potions = new List<Potion>();
-    public List<TrousseauDeCles> trousseauDeCles = new List<TrousseauDeCles>();
+    [SerializeField]
+    public List<Cles> cles = new List<Cles>();
+    [SerializeField]
     public List<QueteItem> quetes = new List<QueteItem>();
 
     public void AddItem(Item item)
@@ -24,17 +31,17 @@ public class Inventory : MonoBehaviour
         {
             outils.Add((Outil)item);
         }
-        else if (item is Cuisine)
+        else if (item is Ingredient)
         {
-            cuisines.Add((Cuisine)item);
+            ingredients.Add((Ingredient)item);
         }
         else if (item is Potion)
         {
             potions.Add((Potion)item);
         }
-        else if (item is TrousseauDeCles)
+        else if (item is Cles)
         {
-            trousseauDeCles.Add((TrousseauDeCles)item);
+            cles.Add((Cles)item);
         }
         else if (item is QueteItem)
         {
@@ -52,17 +59,17 @@ public class Inventory : MonoBehaviour
         {
             outils.Remove((Outil)item);
         }
-        else if (item is Cuisine)
+        else if (item is Ingredient)
         {
-            cuisines.Remove((Cuisine)item);
+            ingredients.Remove((Ingredient)item);
         }
         else if (item is Potion)
         {
             potions.Remove((Potion)item);
         }
-        else if (item is TrousseauDeCles)
+        else if (item is Cles)
         {
-            trousseauDeCles.Remove((TrousseauDeCles)item);
+            cles.Remove((Cles)item);
         }
         else if (item is QueteItem)
         {
@@ -71,4 +78,19 @@ public class Inventory : MonoBehaviour
     }
 
     // Additional methods for managing inventory can be added here
+
+    // getAllItems
+    public List<Item> GetAllItems()
+    {
+        List<Item> allItems = new List<Item>();
+        allItems.AddRange(plantes);
+        allItems.AddRange(outils);
+        allItems.AddRange(ingredients);
+        allItems.AddRange(potions);
+        allItems.AddRange(cles);
+        allItems.AddRange(quetes);
+        return allItems;
+    }
+
+
 }

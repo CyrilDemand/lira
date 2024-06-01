@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d408360ffaaa76498757c4b61fb46fa, type: 3}
+  m_Name: Champignon
+  m_EditorClassIdentifier: 
+  itemName: "Champignon \xE0 la fraise"
+  itemIcon: {fileID: 151327571, guid: 58c8efa4c5109a647af8e634766062b8, type: 3}
+  isStackable: 1
+  maxStack: 20
+  currentStack: 1
+  itemDescription: champi
+  planteType: 0

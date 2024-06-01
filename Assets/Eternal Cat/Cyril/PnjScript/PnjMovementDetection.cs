@@ -25,6 +25,11 @@ public class PnjMovementDetection : MonoBehaviour
     {
         // On initialise la position précédente à la position actuelle
         previousPosition = transform.position;
+        Rigidbody2D rb = GetComponent<Rigidbody2D>();
+        rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+
+        // Désactiver les collisions entre les objets tagués "PNJ"
+        Physics2D.IgnoreLayerCollision(gameObject.layer, LayerMask.NameToLayer("PNJ"), true);
     }
 
     // Appelé à chaque frame
@@ -97,10 +102,6 @@ public class PnjMovementDetection : MonoBehaviour
             }
         }
 
-        if (direction != tmp)
-        {
-            Debug.Log("changement de direction");
-        }
         
         if (isAnimationPlaying && isLastFrameStopped)
         {

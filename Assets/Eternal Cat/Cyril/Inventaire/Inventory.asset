@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02b47097084960442af3d69447e2f38c, type: 3}
+  m_Name: Inventory
+  m_EditorClassIdentifier: 
+  plantes:
+  - {fileID: 11400000, guid: cab511eb670791b43907fc0c53883979, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  outils: []
+  ingredients: []
+  potions:
+  - {fileID: 11400000, guid: 5ee27116ad0da6343bbb6af6edd58f01, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  cles: []
+  quetes: []

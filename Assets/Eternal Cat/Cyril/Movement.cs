@@ -21,6 +21,7 @@ public class Movement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+        Physics2D.IgnoreLayerCollision(gameObject.layer, LayerMask.NameToLayer("PNJ"), true);
     }
 
     void Update()

@@ -2,8 +2,8 @@
     "dailySchedule": 
     [
       {
-        "time": "08:45",
-        "location": "PlantsInPots_2",
+        "time": "08:15",
+        "location": "Working Desk V2 (1)",
         "activity": "walk",
         "dialogueKey": "morningGreeting"
       }

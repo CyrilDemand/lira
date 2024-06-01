@@ -53,15 +53,36 @@ public class InputManager : MonoBehaviour
         }
     }
 
-    void Update()
-    {
+    private bool isInMenu(){
         if (Input.GetKeyDown(KeyCode.G))
         {
             GlossaireManager.instance.ToggleGlossaire();
+            return true;
         }
         if (GlossaireManager.instance.glossaireIsOpen)
         {
             ReadGlossaryInputs();
+            return true;
+        }
+
+        // faire même chose pour inventaire
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            InventoryManager.instance.ToggleInventory();
+        }
+        if (InventoryManager.instance.inventaireIsOpen)
+        {
+            return true;
+        }
+
+        return false;
+    }
+
+    void Update()
+    {
+        if (isInMenu())
+        {
+            return;
         }else{
             horizontalInput = Input.GetAxisRaw("Horizontal");
             verticalInput = Input.GetAxisRaw("Vertical");
