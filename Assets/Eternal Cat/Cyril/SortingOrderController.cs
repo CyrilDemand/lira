@@ -13,6 +13,6 @@ public class SortingOrderController : MonoBehaviour
     void Update()
     {
         // L'ordre de tri est basé sur la position y de l'objet
-        spriteRenderer.sortingOrder = Mathf.RoundToInt(transform.position.y * -100);
+        spriteRenderer.sortingOrder = Mathf.RoundToInt(transform.position.y * -1);
     }
 }
