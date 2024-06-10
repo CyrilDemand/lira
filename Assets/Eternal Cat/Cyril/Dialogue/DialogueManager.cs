@@ -29,6 +29,21 @@ public class DialogueManager : MonoBehaviour
     public PathFinding pnjDeplacement;
 
     public float pnjMoveSpeedBeforeStop;
+
+    // hashmap des personnages, avec comme clé le nom du personnage et comme valeur le sprite du personnage
+    [Header("Characters")] [SerializeField]
+    private List<CharacterSprite> characters = new List<CharacterSprite>();
+
+    [SerializeField]
+    private GameObject characterSpriteGameObject;
+
+    [Serializable]
+    public class CharacterSprite
+    {
+        public string name;
+        public Sprite sprite;
+    }
+
     private void Awake()
     {
         if (instance != null)
@@ -119,7 +134,21 @@ public class DialogueManager : MonoBehaviour
         if (currentStory.canContinue)
         {
             string text = currentStory.Continue();
-            dialogueText.text = text;
+            string character = text.Split(':')[0];
+            dialogueText.text = text.Split(':')[1];
+
+            // changer le sprite du personnage avec le nom du personnage
+               
+            foreach (CharacterSprite characterSprite in characters)
+            {
+                if (characterSprite.name == character)
+                {
+                    characterSpriteGameObject.GetComponent<Image>().sprite = characterSprite.sprite;
+                    characterSpriteGameObject.SetActive(true);
+                    break;
+                }
+            }
+
             Debug.Log("text : " + text);
             if (currentStory.currentChoices.Count > 0)
             {
