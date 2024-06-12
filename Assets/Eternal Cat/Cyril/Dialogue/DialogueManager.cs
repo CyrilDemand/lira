@@ -37,11 +37,31 @@ public class DialogueManager : MonoBehaviour
     [SerializeField]
     private GameObject characterSpriteGameObject;
 
+    [SerializeField]
+    private GameObject characterNameGameObject;
+
+    private string characterName;
+
+    private string characterEmotion;
+
     [Serializable]
     public class CharacterSprite
     {
         public string name;
         public Sprite sprite;
+        public CharacterEmotion emotion;
+    }
+
+    public enum CharacterEmotion
+    {
+        inquiet,
+        neutre,
+        amoureux,
+        colere,
+        interrogation,
+        joyeux,
+        surpris,
+        triste
     }
 
     private void Awake()
@@ -134,20 +154,14 @@ public class DialogueManager : MonoBehaviour
         if (currentStory.canContinue)
         {
             string text = currentStory.Continue();
-            string character = text.Split(':')[0];
-            dialogueText.text = text.Split(':')[1];
+            // récupérer le nom du personnage et l'emotion et supprimer les espaces avant et après
+            characterName = text.Split(':')[0].Trim().ToLower();
+            characterEmotion = text.Split(':')[1].Trim().ToLower();
+            dialogueText.text = text.Split(':')[2];
 
             // changer le sprite du personnage avec le nom du personnage
-               
-            foreach (CharacterSprite characterSprite in characters)
-            {
-                if (characterSprite.name == character)
-                {
-                    characterSpriteGameObject.GetComponent<Image>().sprite = characterSprite.sprite;
-                    characterSpriteGameObject.SetActive(true);
-                    break;
-                }
-            }
+            DisplayCharacterName();
+            ChooseCharacterSpriteByEmotion();
 
             Debug.Log("text : " + text);
             if (currentStory.currentChoices.Count > 0)
@@ -168,6 +182,25 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
+    private void ChooseCharacterSpriteByEmotion()
+    {
+        foreach (CharacterSprite characterSprite in characters)
+        {
+            if (characterSprite.emotion.ToString().ToLower() == characterEmotion && characterSprite.name.ToLower() == characterName)
+            {
+                Debug.Log("characterSprite.name : " + characterSprite.name + " characterName : " + characterName + " characterEmotion : " + characterEmotion);
+                characterSpriteGameObject.GetComponent<Image>().sprite = characterSprite.sprite;
+                characterSpriteGameObject.SetActive(true);
+                break;
+            }
+        }
+    }
+    
+    private void DisplayCharacterName()
+    {
+        characterNameGameObject.GetComponent<TextMeshProUGUI>().text = characterName;
+    }
+    
     private void DisplayChoices()
     {
         List<Choice> currentChoices = currentStory.currentChoices;
