@@ -26,8 +26,6 @@ public class DialogueManager : MonoBehaviour
 
     private TextMeshProUGUI[] choicesText;
 
-    public PathFinding pnjDeplacement;
-
     public float pnjMoveSpeedBeforeStop;
 
     // hashmap des personnages, avec comme clé le nom du personnage et comme valeur le sprite du personnage
@@ -43,6 +41,8 @@ public class DialogueManager : MonoBehaviour
     private string characterName;
 
     private string characterEmotion;
+
+    private PathFinding pnjStopped;
 
     [Serializable]
     public class CharacterSprite
@@ -108,8 +108,8 @@ public class DialogueManager : MonoBehaviour
 
     private void resumePNJPathFinding()
     {
-        Debug.Log(pnjDeplacement);
-        pnjDeplacement.moveSpeed = pnjMoveSpeedBeforeStop;
+        Debug.Log(TriggerManager.Instance.pnjToStop);
+        pnjStopped.moveSpeed = pnjMoveSpeedBeforeStop;
     }
 
     private void StopPlayerAnimation()
@@ -121,16 +121,18 @@ public class DialogueManager : MonoBehaviour
     // Méthode pour arrêter le PNJ le plus proche qui est en interaction avec le joueur
     private void StopPNJ()
     {
-        if ( pnjDeplacement != null)
+        if (TriggerManager.Instance.pnjToStop != null)
         {
-            pnjMoveSpeedBeforeStop = pnjDeplacement.moveSpeed;
-            pnjDeplacement.moveSpeed = 0;
+            pnjMoveSpeedBeforeStop = TriggerManager.Instance.pnjToStop.moveSpeed;
+            pnjStopped = TriggerManager.Instance.pnjToStop;
+            TriggerManager.Instance.pnjToStop.moveSpeed = 0;
         }
        
     }
 
     public void EnterDialogueMode(TextAsset inkJson, string dialogueKey)
     {
+        Debug.Log("pnjToStop : " + TriggerManager.Instance.pnjToStop);
         StopPNJ();
         StopPlayerAnimation();
         currentStory = new Story(inkJson.text);
