@@ -6,6 +6,12 @@
         "location": "Working Desk V2 (1)",
         "activity": "walk",
         "dialogueKey": "morningGreeting"
+      },     
+      {
+        "time": "09:00",
+        "location": "Working Desk V2 (1)",
+        "activity": "walk",
+        "dialogueKey": "Encounter"
       }
     ]
 }
