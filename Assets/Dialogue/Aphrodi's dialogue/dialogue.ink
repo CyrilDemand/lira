@@ -4,7 +4,7 @@ VAR currentDialogue = ""
         Aphrodi: colere : Me parle pas dès le matin
         Lou : surpris : Ok ça marche
         -> END
-    - else:
+    - else :
         Aphrodi: joyeux : Salut c'est Aphrodi
         Lou : joyeux : Salut c'est Lou
         -> END
