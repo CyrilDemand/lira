@@ -1,7 +1,11 @@
 VAR currentDialogue = ""
 
 {currentDialogue == "morningGreeting":
-        Me parle pas dès le matin
+        Aphrodi: colere : Me parle pas dès le matin
+        Lou : surpris : Ok ça marche
+        -> END
     - else:
-        Salut c'est Aphrodi
+        Aphrodi: joyeux : Salut c'est Aphrodi
+        Lou : joyeux : Salut c'est Lou
+        -> END
 }
