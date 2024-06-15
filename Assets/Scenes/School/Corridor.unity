@@ -8157,6 +8157,138 @@ MonoBehaviour:
   - name: Lou
     sprite: {fileID: 21300000, guid: 54b04b6eef999ba4688c67958d3a86e0, type: 3}
     emotion: 6
+  - name: Lou
+    sprite: {fileID: 21300000, guid: 00e00887c54e7234cbad5eed5239cf60, type: 3}
+    emotion: 7
+  - name: Sarah
+    sprite: {fileID: 21300000, guid: eba7d8f6d37bad341bd8e320cf639ea5, type: 3}
+    emotion: 2
+  - name: Sarah
+    sprite: {fileID: 21300000, guid: 74ba2ae64bd262248b01c87a07c3c988, type: 3}
+    emotion: 3
+  - name: Sarah
+    sprite: {fileID: 21300000, guid: 93948525b281c0b428057a52f29763fb, type: 3}
+    emotion: 0
+  - name: Sarah
+    sprite: {fileID: 21300000, guid: 4b916d8ce9cbbf9468fa43bd43442f1a, type: 3}
+    emotion: 4
+  - name: Sarah
+    sprite: {fileID: 21300000, guid: 5f20af49237f28340b6ae68edb1b1726, type: 3}
+    emotion: 5
+  - name: Sarah
+    sprite: {fileID: 21300000, guid: 4907101898114f946bb1ceda79b11657, type: 3}
+    emotion: 6
+  - name: Sarah
+    sprite: {fileID: 21300000, guid: 5347aa1ed4a092f42a97fb3e1735859b, type: 3}
+    emotion: 1
+  - name: Sarah
+    sprite: {fileID: 21300000, guid: 1157d0ffc08e9124babdccfbd4801604, type: 3}
+    emotion: 7
+  - name: Lei
+    sprite: {fileID: 21300000, guid: 7a941889d0de9f249b948bc7a48a6fc8, type: 3}
+    emotion: 2
+  - name: Lei
+    sprite: {fileID: 21300000, guid: 2529c5d9adb712042b9693c4d1d83cd5, type: 3}
+    emotion: 3
+  - name: Lei
+    sprite: {fileID: 21300000, guid: 4d79fedc3ae531a4caf23ca78dcf149d, type: 3}
+    emotion: 0
+  - name: Lei
+    sprite: {fileID: 21300000, guid: 23962949f27cdba49b4eb73a17e3c063, type: 3}
+    emotion: 4
+  - name: Lei
+    sprite: {fileID: 21300000, guid: 96d07430f6f649b4eb636ae0891b5665, type: 3}
+    emotion: 5
+  - name: Lei
+    sprite: {fileID: 21300000, guid: 84d72c61bf320f243b72756717e84e4c, type: 3}
+    emotion: 1
+  - name: Lei
+    sprite: {fileID: 21300000, guid: ab838a4fee3785d42bfd0f5fbf124c74, type: 3}
+    emotion: 6
+  - name: Lei
+    sprite: {fileID: 21300000, guid: c5ee3e953de07fb48a2132eeec5528a3, type: 3}
+    emotion: 7
+  - name: Lumi
+    sprite: {fileID: 21300000, guid: f68be9b9d4b657d4499630971d3101bd, type: 3}
+    emotion: 2
+  - name: Lumi
+    sprite: {fileID: 21300000, guid: 862694c12ca6761428c084684411975c, type: 3}
+    emotion: 3
+  - name: Lumi
+    sprite: {fileID: 21300000, guid: ec4526f3ba2630e4d90b05b6fb6a680d, type: 3}
+    emotion: 0
+  - name: Lumi
+    sprite: {fileID: 21300000, guid: 74c43b0bc104a424fa3ddcfedc556e46, type: 3}
+    emotion: 4
+  - name: Lumi
+    sprite: {fileID: 21300000, guid: 5ad8b2b72441a0e4294d2a4c8d44f906, type: 3}
+    emotion: 5
+  - name: Lumi
+    sprite: {fileID: 21300000, guid: 8876d293ba95ea544821fab3cbb828e9, type: 3}
+    emotion: 1
+  - name: Lumi
+    sprite: {fileID: 21300000, guid: 842f4ff095fabda4bb602923763cbefd, type: 3}
+    emotion: 6
+  - name: Lumi
+    sprite: {fileID: 21300000, guid: 6ba55d30a34453a429e3a6afcd269c53, type: 3}
+    emotion: 7
+  - name: Maya
+    sprite: {fileID: 21300000, guid: 87758cea0b6cc814fa0893a4d703b4f9, type: 3}
+    emotion: 4
+  - name: Maya
+    sprite: {fileID: 21300000, guid: aeabd1a6859f33d468241fe1cd174e71, type: 3}
+    emotion: 2
+  - name: Maya
+    sprite: {fileID: 21300000, guid: b7dddcd5a6c61da4fa455bf4ba8e9ad4, type: 3}
+    emotion: 3
+  - name: Maya
+    sprite: {fileID: 21300000, guid: 44f5f6e4d1464bf4190310e4402e2348, type: 3}
+    emotion: 0
+  - name: Maya
+    sprite: {fileID: 21300000, guid: 2c2d6988ea077224caff701ab1c7a794, type: 3}
+    emotion: 5
+  - name: Maya
+    sprite: {fileID: 21300000, guid: 162277808f819874eb988a647b32c485, type: 3}
+    emotion: 1
+  - name: Maya
+    sprite: {fileID: 21300000, guid: c347bd1818ced67459f3bc0dcf79936a, type: 3}
+    emotion: 6
+  - name: Maya
+    sprite: {fileID: 21300000, guid: 7a6215e8138c37442bca0b9cae911117, type: 3}
+    emotion: 7
+  - name: Dianae
+    sprite: {fileID: 21300000, guid: affa43da7d865fd4f97d89b37bc08340, type: 3}
+    emotion: 2
+  - name: Dianae
+    sprite: {fileID: 21300000, guid: 1a7d13d048a671b44b68bd68fcbcf422, type: 3}
+    emotion: 1
+  - name: Dianae
+    sprite: {fileID: 21300000, guid: 2e58259ab2331ca458d2a32c2aadbb6f, type: 3}
+    emotion: 3
+  - name: Dianae
+    sprite: {fileID: 21300000, guid: 7964e2a9c908de34ba2eae85be2cafd9, type: 3}
+    emotion: 0
+  - name: Dianae
+    sprite: {fileID: 21300000, guid: 7c4c6e1c65fcf5f4facf0e6933870af7, type: 3}
+    emotion: 4
+  - name: Dianae
+    sprite: {fileID: 21300000, guid: 6a97883c631d8524f9dfc56755306b6e, type: 3}
+    emotion: 5
+  - name: Dianae
+    sprite: {fileID: 21300000, guid: 72155151d3f550048a3114dd925eab18, type: 3}
+    emotion: 6
+  - name: Dianae
+    sprite: {fileID: 21300000, guid: 0638c190693002d428c86237a3ab0772, type: 3}
+    emotion: 7
+  - name: Alhena
+    sprite: {fileID: 21300000, guid: 79fc92237b519f54282e1701bbcc8afd, type: 3}
+    emotion: 1
+  - name: Oruo
+    sprite: {fileID: 21300000, guid: 3365284c59c669e46b4211de4979fd3f, type: 3}
+    emotion: 1
+  - name: Thomas
+    sprite: {fileID: 21300000, guid: ced79cd51ce3ac2498ffa08c581413cf, type: 3}
+    emotion: 1
   characterSpriteGameObject: {fileID: 1912234287}
   characterNameGameObject: {fileID: 1810554242}
 --- !u!1 &305549449
@@ -62397,7 +62529,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1882999747}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
